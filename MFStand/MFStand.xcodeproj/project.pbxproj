@@ -14,6 +14,7 @@
 		3E31AA5F1AA1A4C5005EBDE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E31AA5E1AA1A4C5005EBDE6 /* Images.xcassets */; };
 		3E31AA621AA1A4C5005EBDE6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E31AA601AA1A4C5005EBDE6 /* LaunchScreen.xib */; };
 		3E31AA6E1AA1A4C5005EBDE6 /* MFStandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E31AA6D1AA1A4C5005EBDE6 /* MFStandTests.m */; };
+		3E8C59DA1AA417A500995E5F /* GetWebDownApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C59D91AA417A500995E5F /* GetWebDownApi.m */; };
 		D68E1EA312B95ADB5FDBC9AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2AB7301C7CF4B2CC5C3D90 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,10 @@
 		3E31AA671AA1A4C5005EBDE6 /* MFStandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFStandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E31AA6C1AA1A4C5005EBDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E31AA6D1AA1A4C5005EBDE6 /* MFStandTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFStandTests.m; sourceTree = "<group>"; };
+		3E8C59D51AA4112300995E5F /* MFConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFConfig.h; path = public/MFConfig.h; sourceTree = "<group>"; };
+		3E8C59D61AA4120500995E5F /* MFStand-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFStand-Prefix.pch"; sourceTree = "<group>"; };
+		3E8C59D81AA417A500995E5F /* GetWebDownApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetWebDownApi.h; path = network/GetWebDownApi.h; sourceTree = "<group>"; };
+		3E8C59D91AA417A500995E5F /* GetWebDownApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetWebDownApi.m; path = network/GetWebDownApi.m; sourceTree = "<group>"; };
 		76445EE2370C562AD200F268 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		771B780A6F05C3D60DF1C457 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7E2AB7301C7CF4B2CC5C3D90 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +110,8 @@
 		3E31AA501AA1A4C5005EBDE6 /* MFStand */ = {
 			isa = PBXGroup;
 			children = (
+				3E8C59D71AA4173300995E5F /* network */,
+				3E8C59D41AA410E900995E5F /* public */,
 				3E31AA551AA1A4C5005EBDE6 /* AppDelegate.h */,
 				3E31AA561AA1A4C5005EBDE6 /* AppDelegate.m */,
 				3E31AA581AA1A4C5005EBDE6 /* ViewController.h */,
@@ -122,6 +129,7 @@
 			children = (
 				3E31AA521AA1A4C5005EBDE6 /* Info.plist */,
 				3E31AA531AA1A4C5005EBDE6 /* main.m */,
+				3E8C59D61AA4120500995E5F /* MFStand-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,6 +149,23 @@
 				3E31AA6C1AA1A4C5005EBDE6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E8C59D41AA410E900995E5F /* public */ = {
+			isa = PBXGroup;
+			children = (
+				3E8C59D51AA4112300995E5F /* MFConfig.h */,
+			);
+			name = public;
+			sourceTree = "<group>";
+		};
+		3E8C59D71AA4173300995E5F /* network */ = {
+			isa = PBXGroup;
+			children = (
+				3E8C59D81AA417A500995E5F /* GetWebDownApi.h */,
+				3E8C59D91AA417A500995E5F /* GetWebDownApi.m */,
+			);
+			name = network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +306,7 @@
 			files = (
 				3E31AA5A1AA1A4C5005EBDE6 /* ViewController.m in Sources */,
 				3E31AA571AA1A4C5005EBDE6 /* AppDelegate.m in Sources */,
+				3E8C59DA1AA417A500995E5F /* GetWebDownApi.m in Sources */,
 				3E31AA541AA1A4C5005EBDE6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +431,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MFStand/MFStand-Prefix.pch";
 				INFOPLIST_FILE = MFStand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,6 +446,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MFStand/MFStand-Prefix.pch";
 				INFOPLIST_FILE = MFStand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

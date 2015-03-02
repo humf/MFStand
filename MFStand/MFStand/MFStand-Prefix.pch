@@ -1,0 +1,22 @@
+//
+//  MFStand-Prefix.pch
+//  MFStand
+//
+//  Created by wmgshu on 15/3/2.
+//  Copyright (c) 2015年 michael. All rights reserved.
+//
+
+#ifndef MFStand_MFStand_Prefix_pch
+#define MFStand_MFStand_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "MFConfig.h"
+
+#endif

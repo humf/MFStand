@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MobClick.h"
+#import "YTKNetworkConfig.h"
+#import "GetWebDownApi.h"
 @interface AppDelegate ()
 
 @end
@@ -15,13 +17,40 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    //友盟统计
+-(void)mobClick{
+    //初始化友盟统计
     [MobClick startWithAppkey:@"54f1930dfd98c5e56b0008f6" reportPolicy:BATCH   channelId:@"distribution"];
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [MobClick setAppVersion:version];
+}
+-(void)iswebDown{
+    //停机维护接口
+    GetWebDownApi *webDown = [[GetWebDownApi alloc] init];
+    [webDown startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
+        GetWebDownApi *down = (GetWebDownApi *)request;
+        NSDictionary *responseDic = [down responseDic];
+        NSString *codeStr=[NSString stringWithFormat:@"%@",[responseDic objectForKey:@"code"]];
+        if (codeStr.intValue < 0) {
+            NSDictionary *info = responseDic[@"info"];
+            NSString *url = info[@"url"];
+            if (url) {
+                UIWebView *web = [[UIWebView alloc] initWithFrame:self.window.bounds];
+                [self.window addSubview:web];
+                NSURLRequest *urlReq = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+                [web loadRequest:urlReq];
+            }
+        }
+    } failure:^(YTKBaseRequest *request) {
+    }];
+}
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    [self mobClick];
+    YTKNetworkConfig * config = [YTKNetworkConfig sharedInstance];
+    config.baseUrl = BaseUrl;
+
+    [self iswebDown];
+    
     return YES;
 }
 
