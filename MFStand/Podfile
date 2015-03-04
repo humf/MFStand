@@ -1,2 +1,4 @@
 pod 'YTKNetwork'
 pod 'UMengAnalytics'
+pod 'Masonry'
+pod 'MJRefresh'

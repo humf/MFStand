@@ -45,7 +45,9 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     [self mobClick];
+    
     YTKNetworkConfig * config = [YTKNetworkConfig sharedInstance];
     config.baseUrl = BaseUrl;
 

@@ -22,18 +22,24 @@ PODS:
   - AFNetworking/UIKit (2.5.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Masonry (0.6.1)
+  - MJRefresh (0.0.1)
   - UMengAnalytics (3.4.4)
   - YTKNetwork (0.2.0):
     - AFDownloadRequestOperation (~> 2.0)
     - AFNetworking (~> 2.0)
 
 DEPENDENCIES:
+  - Masonry
+  - MJRefresh
   - UMengAnalytics
   - YTKNetwork
 
 SPEC CHECKSUMS:
   AFDownloadRequestOperation: e223a65bc56fb8e6ae5d289b649c7bcc6b307f0d
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
+  MJRefresh: 02638d90855109026754562b7507e5c5eabfcc65
   UMengAnalytics: a563e5987579baf9462c912e83121b0625ec8606
   YTKNetwork: a01d2ac5bc03171917adf2856ec0fca2b0d00f8b
 
